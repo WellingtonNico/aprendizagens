@@ -1,0 +1,172 @@
+JAVASCRIPT
+dá para converter datas do formato iso com horário em utc colocando "UTC" ao final da string;
+
+
+PYTHON
+
+
+
+*gunicorn:
+é possível alterar a quantidade de workers no processo, assim como alterar a classe de thread para gthreads, que são os melhores no caso de contato com api externa ou redis;
+
+*requests:
+para enviar um arquivo preciso colocar o tipo mime dele na mesma túpula para usar na request;
+
+*django:
+é possível usar um backend customizado para usar o email como autenticação, também é possível usar
+um backend customizado para authenticação por token;
+quando um field booleano de pesquisa não estiver funcionando com 1 ou 0, é possível que exista bug,
+para corrigir tem que converter pra True ou False;
+cada migração nova feita deve ter o deploy feito, para evitar transtornos com o banco de dados;
+transações atômicas são melhor performadas dentro de um bloco "with atomic():" pois desbloqueiam a conexão
+para ser usada em casos de loop;
+para evitar que campos de estoque e preços sejam alterados ao salvar uma instância qualquer, principalmente nos serializers,
+basta remover o field dos forms, necessitando assim de um método para alterar preço e estoque individualmente em cada produto;
+ao deletar um item, deve-se imediatamente encerrar a função para que ela não gere um novo cadastro do mesmo ao salvar uma instancia já deletada;
+a posição da declaração dos fields do ModelForm pode interferir na validação;
+para habilitar as urls com o mesmo nome do domínio é preciso usar a variável USE_X_FORWARDED_HOST = True e adicinoar o header nas configurações do nginx;
+é possível desfazer uma migração usando o comando manage.py migrate <app> <arquivo da migração anterior>
+---para fazer o drop de uma tabela primeiro precisamos do mode dela, que pode conseguido com estes comandos:
+---from django.db import connection
+---tables = connection.introspection.table_names()
+---for tabela in tables:
+---	try:
+---		connection.cursor.execute('DROP TABLE <nome da tabela> CASCADE;')
+---	except:
+---		pass
+
+*channels:
+para funcionar corretamente precisa usar uma configuração especial de ssl, porém pra debugar tem que ser a url pura;
+tem que usar a variável CSRF_TRUSTED_ORIGINS habilitando o site correto;
+
+*celery:
+não pode deixar um decorator sem uma tarefa abaixo, pois ele trava a aplicação e não gera nenhum log de erro;
+o bug das tarefas periódicas rodando várias vezes é resolvido retirando a especificação da fila;
+para as prioridades funcionarem precisa ter as seguintes configurações:
+	CELERYD_PREFETCH_MULTIPLIER = 1
+	CELERY_PREFETCH_MULTIPLIER = 1
+	CELERY_TASK_CREATE_MISSING_QUEUES=True
+	CELERY_BROKER_TRANSPORT_OPTIONS = {
+    		'priority_steps': list(range(4)),
+    		'queue_order_strategy': 'priority',
+    		'sep':':'
+	};
+
+
+
+HEROKU
+
+*deployment:
+nunca fazer deploymente próximo ao horário de fim de expediente;
+sempre testar função antes de fazer o deploy;
+sempre configurar a política de memória do redis com "heroku redis:maxmemory redis-polished-28585(nome do addon) --policy volatile-lru";
+sempre confugurar janela de manutenção do reids para com o comando: heroku redis:maintenance --window="Sunday 5:00", assim a manutenção irá ocorrer às 2 da manhã de domingo;
+
+
+
+GIT
+
+é possível descartar um commit usando "git reset --hard HEAD~(quantos commits precisa voltar)";
+para voltar para a cabeça basta usar "git switch (nome da cabeça)";
+para fazer merge de branch é preciso apagar todas as pastas pycache de ambas as branchs;
+para usar SSH precisa pegar a url ssh no github e usar comando git remote set-url origin <url>;
+para remover arquivos que não podem mais ser trackeados se usa o comando "git rm -r --cached .", depois é só adicionar novamente e fazer um commit;
+
+
+
+RECEBIMENTO DE DADO EXTERNO
+
+*notificações:
+é possível que se receber uma notificação na primeira vez tudo ocorra bem, é necessário simular o recebimento consecutivo para saber se algo será alterado;
+para os dados externos não pode se usar um datetime now para last_update, deve se tirar esta informação de outro lugar;
+verificar se o dado externo deve alterar mais de um dado interno, por exemplo informações sobre pedidos de carrinhos;
+
+
+
+MERCADOLIVRE
+
+*alteração dos anúncios:
+aparentemente qualquer alteração no anúncio retorna todos o json do mesmo, precisa verificar alguns detalhes para colocar
+os dados atualizados no cadastro do anúncio após as alterações;
+
+
+LINUX
+é possível filtar os logs em um range específico de tempo com o comando sed. ex: sed -n '/2018-04-12 14:44:00.000/,/2018-04-12 14:45:00.000/p' <arquivo de log>, ex: /var/log/syslog
+em caso de demora para início de requisição, pode ser problema de dns, colocando o do google pode resolver(nameserver 8.8.8.8) no /etc/resolv.conf
+para adicionar variáveis permanentes é necessário editar o arquivo ~/.profile usando export <variável>=<valor>;
+para logar usando ssh, é necessário gerar uma chave na máquina local e usar o comando
+cat <local da chave pública local> | ssh user@host "mkdir ~/.ssh && cat >> ~/.ssh/authorized_keys"(o comando mkdir cria a pasta se ainda não existe, >> é pra adicionar em vez de fazer override) o comando precisa estar entre aspas;
+* é necessário que todos os seviços importantes sejam habilitados para rodar ao boot;
+	-- comandos uteis:
+	* journalctl -u <nome do serviço> -f;
+	* systemctl restart,start ...;
+	* ncdu (precisa intalar com apt get);
+	* sudo chmod +x <file name>, adiciona a possibilidade de executar um arquivo bash;
+	* scp <arquivo local> <user>@<domain>:<local destino> , para fazer upload de arquivo pro servidor (-r recursivo);
+	* scp <user>@<domain>:<local do arquivo desejado> <local destino>, para fazer download de arquivo do servidor;
+	* ufw enable, delete...;
+	* rm -r <arquivo> , deletar arquivo;
+	* passwd <user name> pra alterar a senha de um usuário;
+	* crontab -e , para criar schedules;
+
+PROCESS STATE CODES
+       Here are the different values that the s, stat and state output specifiers (header "STAT" or "S") will display to describe the state of a process:
+       D    uninterruptible sleep (usually IO)
+       R    running or runnable (on run queue)
+       S    interruptible sleep (waiting for an event to complete)
+       T    stopped, either by a job control signal or because it is being traced.
+       W    paging (not valid since the 2.6.xx kernel)
+       X    dead (should never be seen)
+       Z    defunct ("zombie") process, terminated but not reaped by its parent.
+
+       For BSD formats and when the stat keyword is used, additional characters may be displayed:
+       <    high-priority (not nice to other users)
+       N    low-priority (nice to other users)
+       L    has pages locked into memory (for real-time and custom IO)
+       s    is a session leader
+       l    is multi-threaded (using CLONE_THREAD, like NPTL pthreads do)
+       +    is in the foreground process group.
+
+
+NGINX
+
+* é possível habilitar compressão de arquivos e também escolher quais os formatos para isso, aumenta muito a velocidade;
+
+GUNICORN
+
+* é possível escolher a quantidade de workers e a classe de threads, melhor gthreads;
+
+POSTGRES
+* quando o backup não puder ser concluído com a saída dizendo que não é possível usar o arquivo de entrada, pode ser que o backup está corrompido;
+* quando for fazer o restore de um database, é necessário antes ter um usuário com o mesmo nome para vincular o banco de dados;
+* sudo -u postgres psql;
+* sudo -u postgres pg_gump -Fc <nome do database> > <local de destino do backup>, -Fc(compressão);
+* sudo pg_restore -d <db name> -h <host ex:127.0.0.1> -U <nome do usuário> <local completo do arquivo>
+* sudo -u postgres pg_restore -d <database> -Fc <backup> & , -Fc(por conta do formato .dump) -- funciona se o backup não for corrompido 16176
+* para habilitar o uso remoto tem que editar o comando listen_addresses = '*' no arquivo postgresql.conf e no pg_hba.conf adicionar as duas linhas no final:
+host    all             all              0.0.0.0/0                       md5
+host    all             all              ::/0                            md5
+
+
+REDIS
+* é preciso alterar as o tipo de política de memória para allkeys-lru no arquivo de configuração do redis na diretiva maxmemory-policy
+
+comando para pegar o tamanho do banco de dados
+   SELECT
+    pg_database.datname,
+    pg_size_pretty(pg_database_size(pg_database.datname)) AS size
+    FROM pg_database
+    WHERE datname = '<nome do banco de dados>';
+
+ou somente select pg_size_pretty(pg_database_size('<nome do banco de dados>'));
+
+
+RABBITMQ
+* é melhor para garantia de recebimento das mensagens;
+* para habilitar o manager usa o comando "sudo rabbitmq-plugins enable rabbitmq_management";
+* comandos para adicionar um usuário e configurar: sudo rabbitmqctl add_user <usuário> <senha>,sudo rabbitmqctl set_user_tags <usuário> administrator;
+* é necessário adicionar as permissões ao vhost com o comando: rabbitmqctl set_permissions -p /(ou /<vhost>) <usuário> "." "." "."
+
+
+pra fazer build do flutter no ios tem que usar o comando --no-tree-shake-icons
+
