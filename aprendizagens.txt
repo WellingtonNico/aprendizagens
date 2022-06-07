@@ -71,6 +71,9 @@ para voltar para a cabeça basta usar "git switch (nome da cabeça)";
 para fazer merge de branch é preciso apagar todas as pastas pycache de ambas as branchs;
 para usar SSH precisa pegar a url ssh no github e usar comando git remote set-url origin <url>;
 para remover arquivos que não podem mais ser trackeados se usa o comando "git rm -r --cached .", depois é só adicionar novamente e fazer um commit;
+Se as funções do git estiverem lentas, é possível tentar adicionar o conteúdo a seguir no arquivo /etc/ssh/ssh_config: 
+	Host gitlab.com
+		AddressFamily inet
 
 
 
@@ -91,6 +94,7 @@ os dados atualizados no cadastro do anúncio após as alterações;
 
 
 LINUX
+Para um comando ser encontrado no crontab e pelo ssh, deve haver um link para o bash no caminho /usr/bin;
 é possível filtar os logs em um range específico de tempo com o comando sed. ex: sed -n '/2018-04-12 14:44:00.000/,/2018-04-12 14:45:00.000/p' <arquivo de log>, ex: /var/log/syslog
 em caso de demora para início de requisição, pode ser problema de dns, colocando o do google pode resolver(nameserver 8.8.8.8) no /etc/resolv.conf
 para adicionar variáveis permanentes é necessário editar o arquivo ~/.profile usando export <variável>=<valor>;
