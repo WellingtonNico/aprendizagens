@@ -135,6 +135,8 @@ PROCESS STATE CODES
        s    is a session leader
        l    is multi-threaded (using CLONE_THREAD, like NPTL pthreads do)
        +    is in the foreground process group.
+Para instalar o linux na utm pode instalar a versão server e depois instalar o tasksel com o att e depois usar o comando "tasksel Install ubuntu-desktop" para instalar a interface gráfica;
+Depois é necessário instalar os drivers de vídeo spice-vdagent e spice-webdavd;
 
 
 NGINX
