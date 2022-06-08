@@ -1,3 +1,8 @@
+CRONTAB
+Para usar um bash que não esteja na pasta bin do sistema é possível usar o comando como no exemplo: 0 10 * * * bash -l -c "<comando>"
+
+
+
 JAVASCRIPT
 dá para converter datas do formato iso com horário em utc colocando "UTC" ao final da string;
 
