@@ -185,3 +185,7 @@ pra fazer build do flutter no ios tem que usar o comando --no-tree-shake-icons
 ANDROID EMULATOR
 * é possível configurar o emulador para funcionar o teclado, editando o parâmetro hw.keyboard no arquivo que fica em ~/.android/avd/<device>/config.ini;
 
+
+
+RUBY
+Para instalar Ruby mais antigas no Mac, é necessário usar antes o comando export optflags="-Wno-error=implicit-function-declaration" ou adicionar o prefixo CFLAGS="-Wno-error=implicit-function-declaration" antes do comando de instalação;
