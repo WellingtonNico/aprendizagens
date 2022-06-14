@@ -188,4 +188,5 @@ ANDROID EMULATOR
 
 
 RUBY
-Para instalar Ruby mais antigas no Mac, é necessário usar antes o comando export optflags="-Wno-error=implicit-function-declaration" ou adicionar o prefixo CFLAGS="-Wno-error=implicit-function-declaration" antes do comando de instalação;
+Para instalar versões antigas do ruby no Mac, é necessário instalar uma versão mais antiga do openssl por exemplo a 1.0.2 e usar rbenv em vez de rvm, usando comandos com o prefixo "arch -x86_64";
+
