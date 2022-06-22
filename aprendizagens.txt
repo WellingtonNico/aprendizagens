@@ -190,3 +190,6 @@ ANDROID EMULATOR
 RUBY
 Para instalar versões antigas do ruby no Mac, é necessário instalar uma versão mais antiga do openssl por exemplo a 1.0.2 e usar rbenv em vez de rvm, usando comandos com o prefixo "arch -x86_64";
 
+
+UTM
+Para instalar o Windows 11, vai parar inicialmente na instalação onde é necessário internet, porém é possível pular isso, abrindo o terminal com o atalho fn+shift+F10, e rodando o comando "oobe\bypassnro;"
