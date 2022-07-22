@@ -2,14 +2,17 @@ CRONTAB
 Para usar um bash que não esteja na pasta bin do sistema é possível usar o comando como no exemplo: 0 10 * * * bash -l -c "<comando>"
 
 
+REGEX
+Regex para encontrar o formato de anos 0000 a|A 0001 = r'(\d{4}\s[aA]{1}\s\d{4})'
+Regex para encontrar ceps = r'(\b\d{2}[\s\.-]?\d{3}[\s\.-]?\d{3}\b)'
+Regex para validar email = r'^(([a-zA-Z\d\.-_]+)@([a-zA-Z\d]+)\.([a-z-A-Z]{2,8})(\.[a-zA-Z]{2,8})?)$'
+
 
 JAVASCRIPT
 dá para converter datas do formato iso com horário em utc colocando "UTC" ao final da string;
 
 
 PYTHON
-
-
 
 *gunicorn:
 é possível alterar a quantidade de workers no processo, assim como alterar a classe de thread para gthreads, que são os melhores no caso de contato com api externa ou redis;
@@ -56,6 +59,7 @@ para as prioridades funcionarem precisa ter as seguintes configurações:
     		'queue_order_strategy': 'priority',
     		'sep':':'
 	};
+Quando houver o erro de gdbm, basta instalar o python3.8-gdbm, o erro que impede o script de reconhecer o formato do banco de dados;
 
 
 
