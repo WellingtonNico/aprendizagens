@@ -204,10 +204,14 @@ Para instalar o Windows 11, vai parar inicialmente na instalação onde é neces
 ZSH
 
 Para adicionar cores ao shell do Mac basta adicionar estas linhas ao .zshrc:
-alias ll='ls -al'
+function parse_git_branch() {
+    git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
+}
 
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
-
-autoload -U colors && colors
-PS1="%{$fg[green]%}%n@%m%{$reset_color%}:%{$fg[cyan]%}%1~%{$reset_color%} %% "
+COLOR_DEF='%f'
+COLOR_USR='%F{10}'
+COLOR_DIR='%F{201}'
+COLOR_GIT='%F{226}'
+NEWLINE=$'\n'
+setopt PROMPT_SUBST
+export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%2~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF} $ '
