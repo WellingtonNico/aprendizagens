@@ -142,6 +142,7 @@ PROCESS STATE CODES
        +    is in the foreground process group.
 Para instalar o linux na utm pode instalar a versão server e depois instalar o tasksel com o att e depois usar o comando "tasksel Install ubuntu-desktop" para instalar a interface gráfica;
 Depois é necessário instalar os drivers de vídeo spice-vdagent e spice-webdavd;
+* para usar o cedilha em máquina virtual basta seguir o tutorial do link https://github.dev/marcopaganini/gnome-cedilla-fix e alterar o layout do teclado para English(US,intl.,with dead keys);
 
 
 NGINX
@@ -205,7 +206,7 @@ ZSH
 
 Para adicionar cores ao shell do Mac basta adicionar estas linhas ao .zshrc:
 function parse_git_branch() {
-    git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
+    git branch 2> /dev/null | sed -n -e 's/^\* \ (.*\)/[\1]/p'
 }
 
 COLOR_DEF='%f'
@@ -214,6 +215,6 @@ COLOR_DIR='%F{201}'
 COLOR_GIT='%F{226}'
 NEWLINE=$'\n'
 setopt PROMPT_SUBST
-export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%2~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF} $ '
+export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%2~${COLOR_GIT}$(parse_git_branch)${COLOR_DEF} $ '
 
 Para procurar mais cores procurar por xterm 256color chart
