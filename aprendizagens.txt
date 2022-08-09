@@ -104,6 +104,8 @@ os dados atualizados no cadastro do anúncio após as alterações;
 
 
 LINUX
+Para facilmente deletar arquivos "find . -name "*.bak" -type f -delete"
+Para facilmente deletar pastas "find . -name "__pycache__" -type d -exec rm -rf {} +"
 Para fazer o rodízio de logs usar o commando "sudo journalctl --rotate" e para configurar limiter, configurar o arquivo /etc/systemd/journald.conf;
 Para um comando ser encontrado no crontab e pelo ssh, deve haver um link para o bash no caminho /usr/bin;
 é possível filtar os logs em um range específico de tempo com o comando sed. ex: sed -n '/2018-04-12 14:44:00.000/,/2018-04-12 14:45:00.000/p' <arquivo de log>, ex: /var/log/syslog
