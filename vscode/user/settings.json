@@ -1,0 +1,20 @@
+{
+    "workbench.colorTheme": "Monokai Extended",
+    "emmet.includeLanguages": {
+        "erb": "html"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.minimap.enabled": false,
+    "editor.accessibilitySupport": "off",
+    "editor.rulers": [
+        80
+    ],
+    "editor.formatOnSave": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "html.format.contentUnformatted": "",
+    "json.maxItemsComputed": 999999999999999,
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "workbench.editor.enablePreview": false,
+    "merge-conflict.autoNavigateNextConflict.enabled": true,
+    "git.mergeEditor": false,
+}

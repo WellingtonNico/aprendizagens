@@ -219,5 +219,26 @@ COLOR_GIT='%F{226}'
 NEWLINE=$'\n'
 setopt PROMPT_SUBST
 export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%2~${COLOR_GIT}$(parse_git_branch)${COLOR_DEF} $ '
-
 Para procurar mais cores procurar por xterm 256color chart
+
+
+VSCODE MAC
+{
+    "workbench.colorTheme": "Monokai Extended",
+    "emmet.includeLanguages": {
+        "erb": "html"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.minimap.enabled": false,
+    "editor.accessibilitySupport": "off",
+    "editor.rulers": [
+        80
+    ],
+    "editor.formatOnSave": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "html.format.contentUnformatted": "",
+    "json.maxItemsComputed": 999999999999999,
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "editor.codeLens": false,
+}
+
