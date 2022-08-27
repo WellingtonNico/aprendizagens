@@ -104,6 +104,7 @@ os dados atualizados no cadastro do anúncio após as alterações;
 
 
 LINUX
+Para renovar o letencript, precisa logar como root "sudo -s" entrar no venv/bin onde tem o certbot instalado e rodar "certbot renew --force-renewal";
 Para facilmente deletar arquivos "find . -name "*.bak" -type f -delete"
 Para facilmente deletar pastas "find . -name "__pycache__" -type d -exec rm -rf {} +"
 Para fazer o rodízio de logs usar o commando "sudo journalctl --rotate" e para configurar limiter, configurar o arquivo /etc/systemd/journald.conf;
@@ -242,3 +243,6 @@ VSCODE MAC
     "editor.codeLens": false,
 }
 
+
+PARALLELS
+Para digitar ç no windows e ubuntu, é necessário trocar os layouts dos teclados e usar ' + c 
