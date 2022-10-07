@@ -120,7 +120,7 @@ cat <local da chave pública local> | ssh user@host "mkdir ~/.ssh && cat >> ~/.s
 	* systemctl restart,start ...;
 	* ncdu (precisa intalar com apt get);
 	* sudo chmod +x <file name>, adiciona a possibilidade de executar um arquivo bash;
-	* scp <arquivo local> <user>@<domain>:<local destino> , para fazer upload de arquivo pro servidor (-r recursivo);
+	* scp <arquivo local> <user>@<domain>:<local destino> , para fazer upload de arquivo pro servidor (-r recursivo para quando for uma pasta);
 	* scp <user>@<domain>:<local do arquivo desejado> <local destino>, para fazer download de arquivo do servidor;
 	* ufw enable, delete...;
 	* rm -r <arquivo> , deletar arquivo;
@@ -147,6 +147,7 @@ PROCESS STATE CODES
 Para instalar o linux na utm pode instalar a versão server e depois instalar o tasksel com o att e depois usar o comando "tasksel Install ubuntu-desktop" para instalar a interface gráfica;
 Depois é necessário instalar os drivers de vídeo spice-vdagent e spice-webdavd;
 * para usar o cedilha em máquina virtual basta seguir o tutorial do link https://github.dev/marcopaganini/gnome-cedilla-fix e alterar o layout do teclado para English(US,intl.,with dead keys);
+Para desabilitar o uso do sudo basta editar o arquivo /etc/sudoers: root ALL = (ALL) NOPASSWD:ALL;ß
 
 
 NGINX
