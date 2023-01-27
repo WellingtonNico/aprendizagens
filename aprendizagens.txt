@@ -14,6 +14,8 @@ dá para converter datas do formato iso com horário em utc colocando "UTC" ao f
 
 PYTHON
 
+Instalar no Mac roseta m1 brew install --build-from-source python@3.9
+
 *gunicorn:
 é possível alterar a quantidade de workers no processo, assim como alterar a classe de thread para gthreads, que são os melhores no caso de contato com api externa ou redis;
 
@@ -151,7 +153,7 @@ Para desabilitar o uso do sudo basta editar o arquivo /etc/sudoers: root ALL = (
 
 
 NGINX
-
+* não alterar o user no NGINX.conf para evitar problemas de permissão, que impactam no download de arquivos por exemplo; 
 * é possível habilitar compressão de arquivos e também escolher quais os formatos para isso, aumenta muito a velocidade;
 
 GUNICORN
