@@ -266,3 +266,10 @@ Para digitar ç no windows e ubuntu, é necessário trocar os layouts dos teclad
 GERAL
 
 Cash On Delivery (COD) termo que não sabia ante na shopee
+
+
+REACT NATIVE
+
+Bibliotecas importantes:
+react-native-swiper-flatlist
+react-native-svg-app-icon
