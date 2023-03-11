@@ -1,3 +1,6 @@
+Não mexer com as permissões de arquivos e pastas de serviços de armazenamento de dados
+
+
 CRONTAB
 Para usar um bash que não esteja na pasta bin do sistema é possível usar o comando como no exemplo: 0 10 * * * bash -l -c "<comando>"
 
@@ -261,6 +264,10 @@ VSCODE MAC
 
 PARALLELS
 Para digitar ç no windows e ubuntu, é necessário trocar os layouts dos teclados e usar ' + c 
+
+
+DOCKER
+No linux, para acessar um serviço do host tem que usar 172.17.0.1 ao invés de docker.host.internal
 
 
 GERAL
