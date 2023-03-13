@@ -280,3 +280,7 @@ REACT NATIVE
 Bibliotecas importantes:
 react-native-swiper-flatlist
 react-native-svg-app-icon
+
+
+Se houver erro ao permitir estáticos no Ubuntu com nginx
+sudo usermod -a -G $USER www-data
