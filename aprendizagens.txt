@@ -239,6 +239,8 @@ git_branch() {
 export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \$(git_branch) \$ "
 
 
+SSH
+Caso o servidor não esteja fazendo o uso das chaves, verificar permissões nas pastas, usar comando "sudo chmod -R 700 ~/.ssh"
 
 
 VSCODE MAC
@@ -284,3 +286,5 @@ react-native-svg-app-icon
 
 Se houver erro ao permitir estáticos no Ubuntu com nginx
 sudo usermod -a -G $USER www-data
+
+
