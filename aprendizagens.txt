@@ -26,6 +26,7 @@ Instalar no Mac roseta m1 brew install --build-from-source python@3.9
 para enviar um arquivo preciso colocar o tipo mime dele na mesma túpula para usar na request;
 
 *django:
+Nunca deletar nenhum contenttypes
 é possível usar um backend customizado para usar o email como autenticação, também é possível usar
 um backend customizado para authenticação por token;
 quando um field booleano de pesquisa não estiver funcionando com 1 ou 0, é possível que exista bug,
@@ -270,6 +271,8 @@ Para digitar ç no windows e ubuntu, é necessário trocar os layouts dos teclad
 
 DOCKER
 No linux, para acessar um serviço do host tem que usar 172.17.0.1 ao invés de docker.host.internal
+Quando der problema no docker no Mac:
+sudo rm -rf ~/Library/Caches/com.docker.docker ~/Library/Cookies/com.docker.docker.binarycookies ~/Library/Group\ Containers/group.com.docker ~/Library/Logs/Docker\ Desktop ~/Library/Preferences/com.docker.docker.plist ~/Library/Preferences/com.electron.docker-frontend.plist ~/Library/Saved\ Application\ State/com.electron.docker-frontend.savedState ~/.docker /Library/LaunchDaemons/com.docker.vmnetd.plist /Library/PrivilegedHelperTools/com.docker.vmnetd /usr/local/lib/docker
 
 
 GERAL
