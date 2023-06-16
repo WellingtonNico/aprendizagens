@@ -291,3 +291,6 @@ Se houver erro ao permitir estáticos no Ubuntu com nginx
 sudo usermod -a -G $USER www-data
 
 
+FLUTTER
+Para dismiss do teclado geral FocusManager.instance.primaryFocus?.unfocus();
+
