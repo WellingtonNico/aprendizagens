@@ -270,6 +270,10 @@ Para digitar ç no windows e ubuntu, é necessário trocar os layouts dos teclad
 
 
 DOCKER
+Quando ocorrer o erro parecido no Mac:
+failed to solve: python:3.8.17-bullseye: error getting credentials - err: exit status 1, out: ``
+Precisa editar o arquivo ~/.docker/config.json "credsStore": "desktop", alterar para "osxkeychain"
+
 No linux, para acessar um serviço do host tem que usar 172.17.0.1 ao invés de docker.host.internal
 Quando der problema no docker no Mac:
 sudo rm -rf ~/Library/Caches/com.docker.docker ~/Library/Cookies/com.docker.docker.binarycookies ~/Library/Group\ Containers/group.com.docker ~/Library/Logs/Docker\ Desktop ~/Library/Preferences/com.docker.docker.plist ~/Library/Preferences/com.electron.docker-frontend.plist ~/Library/Saved\ Application\ State/com.electron.docker-frontend.savedState ~/.docker /Library/LaunchDaemons/com.docker.vmnetd.plist /Library/PrivilegedHelperTools/com.docker.vmnetd /usr/local/lib/docker
