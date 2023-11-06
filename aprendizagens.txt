@@ -200,7 +200,7 @@ pra fazer build do flutter no ios tem que usar o comando --no-tree-shake-icons
 
 
 ANDROID EMULATOR
-* é possível configurar o emulador para funcionar o teclado, editando o parâmetro hw.keyboard no arquivo que fica em ~/.android/avd/<device>/config.ini;
+* é possível configurar o emulador para funcionar o teclado, editando o parâmetro hw.keyboard=yes no arquivo que fica em ~/.android/avd/<device>/config.ini;
 
 Passos para criar um emulador
 1 - baixar o avdmanager e sdkmanager
