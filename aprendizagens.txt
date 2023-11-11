@@ -200,7 +200,7 @@ pra fazer build do flutter no ios tem que usar o comando --no-tree-shake-icons
 
 
 ANDROID EMULATOR
-* é possível configurar o emulador para funcionar o teclado, editando o parâmetro hw.keyboard=yes no arquivo que fica em ~/.android/avd/<device>/config.ini;
+* é possível configurar o emulador para funcionar o teclado, editando o parâmetro hw.keyboard=yes no arquivo que fica em ~/.android/avd/<device>.avd/config.ini;
 
 Passos para criar um emulador
 1 - baixar o avdmanager e sdkmanager
@@ -279,6 +279,8 @@ DOCKER
 Quando ocorrer o erro parecido no Mac:
 failed to solve: python:3.8.17-bullseye: error getting credentials - err: exit status 1, out: ``
 Precisa editar o arquivo ~/.docker/config.json "credsStore": "desktop", alterar para "osxkeychain"
+
+Parar de pedir permissão no Mac: "sudo chown -R $(whoami) ~/.docker"
 
 No linux, para acessar um serviço do host tem que usar 172.17.0.1 ao invés de docker.host.internal
 Quando der problema no docker no Mac:
