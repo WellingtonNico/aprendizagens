@@ -81,6 +81,7 @@ sempre confugurar janela de manutenção do reids para com o comando: heroku red
 
 GIT
 
+Para gerar um relatório do dia, usar 'git log --author="$(git config user.name)" --since=midnight --no-merges --date=local --pretty=format:"%s"', recomendado uso de alias
 é possível descartar um commit usando "git reset --hard HEAD~(quantos commits precisa voltar)";
 para voltar para a cabeça basta usar "git switch (nome da cabeça)";
 Para remover os arquivos verdes do repositório usa o comando "git clean -fd"
