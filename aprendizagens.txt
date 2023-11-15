@@ -154,7 +154,11 @@ PROCESS STATE CODES
 Para instalar o linux na utm pode instalar a versão server e depois instalar o tasksel com o att e depois usar o comando "tasksel Install ubuntu-desktop" para instalar a interface gráfica;
 Depois é necessário instalar os drivers de vídeo spice-vdagent e spice-webdavd;
 * para usar o cedilha em máquina virtual basta seguir o tutorial do link https://github.dev/marcopaganini/gnome-cedilla-fix e alterar o layout do teclado para English(US,intl.,with dead keys);
-Para desabilitar o uso do sudo basta editar o arquivo /etc/sudoers: root ALL = (ALL) NOPASSWD:ALL;ß
+
+Para desabilitar o uso do sudo:
+* $ sudo visado;
+* achar sessão %admin
+* alterar para  %admin	ALL = (ALL) NOPASSWD: ALL
 
 
 NGINX
