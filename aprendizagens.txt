@@ -1,6 +1,12 @@
 Não mexer com as permissões de arquivos e pastas de serviços de armazenamento de dados
 
 
+BREW
+Para desinstalar todos os pacotes
+* brew list | xargs brew uninstall --force
+* brew list --cask | xargs brew uninstall --force
+
+
 CRONTAB
 Para usar um bash que não esteja na pasta bin do sistema é possível usar o comando como no exemplo: 0 10 * * * bash -l -c "<comando>"
 
