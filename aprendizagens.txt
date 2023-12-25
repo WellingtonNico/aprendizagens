@@ -20,6 +20,9 @@ Regex para validar email = r'^(([a-zA-Z\d\.-_]+)@([a-zA-Z\d]+)\.([a-z-A-Z]{2,8})
 JAVASCRIPT
 dá para converter datas do formato iso com horário em utc colocando "UTC" ao final da string;
 
+JAVA
+Instalar jenv
+Exportar com comando "jenv enable-plugin export"
 
 PYTHON
 
@@ -218,7 +221,12 @@ Passos para criar um emulador
 2 - instalar uma api de sistema usando 'sdkmanager --install "<nome da imagem>"'
 3 - criar um emulador usando 'avdmanager create avd --name <nome do emulator> -k "<nome da imagem>"'
 4 - iniciar o emulador por comando ou direto pelo vscode
- 
+
+
+ANDROID SDK
+Para instalar o android sdk, baixe somente cmdline-tools no site do android, adicione o bin no PATH
+Rodar o comando 'sdkmanager --list", e procurar e instalar platform-tool e platform usando 'sdkmanager "<o que precisa ser instalado>" 
+Adicionar o platform e o platform-tools no PATH
 
 
 RUBY
