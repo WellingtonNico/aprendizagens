@@ -247,7 +247,7 @@ function parse_git_branch() {
 
 COLOR_DEF='%f'
 COLOR_USR='%F{10}'
-COLOR_DIR='%F{201}'
+COLOR_DIR='%F{99}'
 COLOR_GIT='%F{226}'
 NEWLINE=$'\n'
 setopt PROMPT_SUBST
