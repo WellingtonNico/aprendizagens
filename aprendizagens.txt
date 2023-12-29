@@ -251,7 +251,7 @@ COLOR_DIR='%F{201}'
 COLOR_GIT='%F{226}'
 NEWLINE=$'\n'
 setopt PROMPT_SUBST
-export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%2~${COLOR_GIT}$(parse_git_branch)${COLOR_DEF} $ '
+export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%2~${COLOR_GIT} $(parse_git_branch)${COLOR_DEF} $ '
 Para procurar mais cores procurar por xterm 256color chart
 
 
