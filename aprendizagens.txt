@@ -179,6 +179,7 @@ GUNICORN
 * é possível escolher a quantidade de workers e a classe de threads, melhor gthreads;
 
 POSTGRES
+* pra aumentar a velocidade precisa aumentar o shared_buffers = 1GB
 * quando o backup não puder ser concluído com a saída dizendo que não é possível usar o arquivo de entrada, pode ser que o backup está corrompido;
 * quando for fazer o restore de um database, é necessário antes ter um usuário com o mesmo nome para vincular o banco de dados;
 * sudo -u postgres psql;
