@@ -17,4 +17,5 @@
     "workbench.editor.enablePreview": false,
     "merge-conflict.autoNavigateNextConflict.enabled": true,
     "git.mergeEditor": false,
+    ""
 }

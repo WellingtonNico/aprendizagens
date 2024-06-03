@@ -120,6 +120,11 @@ os dados atualizados no cadastro do anúncio após as alterações;
 
 
 LINUX
+Criar usuário:
+	* sudo adduser username
+	* sudo usermod -aG sudo username
+	* su - username
+	* username    ALL=(ALL:ALL) NOPASSWD:ALL (sudo visudo)
 Para renovar o letencript, precisa logar como root "sudo -s" entrar no venv/bin onde tem o certbot instalado e rodar "certbot renew --force-renewal";
 Para facilmente deletar arquivos "find . -name "*.bak" -type f -delete"
 Para facilmente deletar pastas "find . -name "__pycache__" -type d -exec rm -rf {} +"
@@ -291,6 +296,15 @@ VSCODE MAC
 }
 
 
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.minimap.enabled": false,
+    "python.analysis.indexing": true,
+    "python.analysis.autoImportCompletions" : true,
+    "python.analysis.packageIndexDepths":[["",20, true]]
+}
+
+
 PARALLELS
 Para digitar ç no windows e ubuntu, é necessário trocar os layouts dos teclados e usar ' + c 
 
@@ -301,6 +315,7 @@ failed to solve: python:3.8.17-bullseye: error getting credentials - err: exit s
 Precisa editar o arquivo ~/.docker/config.json "credsStore": "desktop", alterar para "osxkeychain"
 
 Parar de pedir permissão no Mac: "sudo chown -R $(whoami) ~/.docker"
+
 
 No linux, para acessar um serviço do host tem que usar 172.17.0.1 ao invés de docker.host.internal
 Quando der problema no docker no Mac:
