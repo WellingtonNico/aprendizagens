@@ -231,6 +231,7 @@ Passos para criar um emulador
 
 ANDROID SDK
 Para instalar o android sdk, baixe somente cmdline-tools no site do android, adicione o bin no PATH
+Precisa instalar o platform-tools usando o sdkmanager 'platform-tools'
 Rodar o comando 'sdkmanager --list", e procurar e instalar platform-tool e platform usando 'sdkmanager "<o que precisa ser instalado>" 
 Adicionar o platform e o platform-tools no PATH
 
@@ -340,4 +341,10 @@ sudo usermod -a -G $USER www-data
 
 FLUTTER
 Para dismiss do teclado geral FocusManager.instance.primaryFocus?.unfocus();
+
+Flutterfire configure
+dart pub global run flutterfire_cli:flutterfire configure
+
+Unable to boot device
+Ir nos armazenamentos e apagar caches do dev
 
