@@ -247,6 +247,8 @@ Para instalar o Windows 11, vai parar inicialmente na instalação onde é neces
 
 ZSH
 
+Para usar o leitor de digital inserir "auth       sufficient     pam_tid.so" no arquivo /etc/pam.d/sudo
+
 Para adicionar cores ao shell do Mac basta adicionar estas linhas ao .zshrc:
 function parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/(\1)/p'
@@ -347,4 +349,5 @@ dart pub global run flutterfire_cli:flutterfire configure
 
 Unable to boot device
 Ir nos armazenamentos e apagar caches do dev
+
 
