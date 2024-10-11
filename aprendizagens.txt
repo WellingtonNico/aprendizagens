@@ -350,4 +350,7 @@ dart pub global run flutterfire_cli:flutterfire configure
 Unable to boot device
 Ir nos armazenamentos e apagar caches do dev
 
+Gerar Keystone
+keytool -genkey -alias <nome da máquina> -keyalg RSA -keystore <destino do arquivo> -validity 1000
+
 
