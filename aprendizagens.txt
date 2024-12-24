@@ -101,6 +101,8 @@ Se as funções do git estiverem lentas, é possível tentar adicionar o conteú
 	Host gitlab.com
 		AddressFamily inet
 
+Para usar gitlab sem vpn usar comando: git config --global credential.helper store
+
 
 
 RECEBIMENTO DE DADO EXTERNO
@@ -249,6 +251,7 @@ ZSH
 
 Para usar o leitor de digital inserir "auth       sufficient     pam_tid.so" no arquivo /etc/pam.d/sudo
 
+
 Para adicionar cores ao shell do Mac basta adicionar estas linhas ao .zshrc:
 function parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/(\1)/p'
@@ -357,3 +360,8 @@ keytool -export -rfc -keystore upload-keystore.jks -alias upload -file upload_ce
 
 Daí tem que upar no google
 
+
+
+DOTNET
+Repositório para baixar versões
+https://github.com/isen-ng/homebrew-dotnet-sdk-versions
