@@ -22,7 +22,9 @@ dá para converter datas do formato iso com horário em utc colocando "UTC" ao f
 
 JAVA
 Instalar jenv
-Exportar com comando "jenv enable-plugin export"
+brew install openjdk@<versao>
+jenv add /opt/homebrew/opt/openjdk@<versao>
+
 
 PYTHON
 
@@ -236,6 +238,9 @@ Para instalar o android sdk, baixe somente cmdline-tools no site do android, adi
 Precisa instalar o platform-tools usando o sdkmanager 'platform-tools'
 Rodar o comando 'sdkmanager --list", e procurar e instalar platform-tool e platform usando 'sdkmanager "<o que precisa ser instalado>" 
 Adicionar o platform e o platform-tools no PATH
+Instalar também build-tools
+O Flutter pode reclamar que não acha o Android sdk, não se apavore, use o fvm pra definir uma versão global e rode o projeto no vscode
+Definir ANDROID_HOME sendo a pasta onde vai ficar o cmdline-tools
 
 
 RUBY
