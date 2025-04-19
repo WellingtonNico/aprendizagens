@@ -229,8 +229,10 @@ ANDROID EMULATOR
 Passos para criar um emulador
 1 - baixar o avdmanager e sdkmanager
 2 - instalar uma api de sistema usando 'sdkmanager --install "<nome da imagem>"'
-3 - criar um emulador usando 'avdmanager create avd --name <nome do emulator> -k "<nome da imagem>"'
-4 - iniciar o emulador por comando ou direto pelo vscode
+3 - criar um emulador usando 'avdmanager create avd --name <nome do emulator> -k "<nome da imagem>"'(usar modelo pixel_7_pro)
+4 - editar arquivo de configuração do emulador "~/.android/avd/<nome do emulador>.avd/config.ini", mudar configs para hw.lcd.height = 3120, hw.lcd.width = 1440, hw.lcd.density = 560
+5 - iniciar o emulador por comando ou direto pelo vscode
+
 
 
 ANDROID SDK
